@@ -1,0 +1,53 @@
+.goal{
+    min-height: 35px;
+    max-height: 75px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    padding: 8px;
+    margin: auto 12px;
+}
+
+.goals{
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: auto;
+    grid-gap: 15px;
+    margin-top: 10px;
+    font-size: 18px;
+    padding: auto auto 4px auto;
+}
+
+.goals-container{
+    width: 290px;
+    max-height: 70px;
+    background-color: #e0e2e9;
+    margin-bottom: 50px;
+    border-radius: 15px;
+}
+
+.goals-container-headline{
+    margin: 10px auto 0 10px;
+}
+
+.goals-form{
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
+.goals-form::-webkit-scrollbar{
+    width: 10px;
+}
+
+.goals-form::-webkit-scrollbar-track{
+    border-radius: 12px;
+    background: #fff;
+    background-clip: content-box;
+}
+
+.goals-form::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: #e0e0e0;
+}
+

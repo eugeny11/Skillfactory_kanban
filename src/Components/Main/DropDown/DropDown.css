@@ -1,0 +1,32 @@
+.dropdown {
+    position: relative;
+    width: 100%
+}
+
+.add-goal-to-dropdown{
+    font-size: 18px;
+    background-color: #fff;
+    min-height: 35px;
+    width: 250px;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 16px 0;
+}
+
+.add-goal-to-dropdown-ops{
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    width: 250px;
+    border-radius: 15px;
+    margin: 5px 0 auto;
+    padding: 10px auto;
+}
+
+.add-goal-to-dropdown-ops-item{
+    padding: 8px;
+    width: 100%;
+    line-height: 21px;
+}

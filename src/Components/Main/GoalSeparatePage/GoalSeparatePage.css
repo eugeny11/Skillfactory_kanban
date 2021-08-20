@@ -1,0 +1,25 @@
+.goal-date{
+    font-size: 14px;
+}
+
+.goal-desc{
+    width: 90%;
+}
+
+.goal-title{
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 35px;
+    width: 80%;
+}
+
+.goal-separate-page{
+    padding: 20px 25px;
+}
+
+.separate-page-container{
+    position: relative;
+    padding: 22px 23px 22px 30px;
+    background-color: #fff;
+    border-radius: 5px
+}

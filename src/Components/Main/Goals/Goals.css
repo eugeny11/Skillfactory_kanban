@@ -1,0 +1,51 @@
+.add-backlog-goal-headline{
+    text-align: center;
+}
+
+.add-goal-form{
+    padding: 8px 8px;
+    width: 250px;
+    background-color: #fff;
+    min-height: 35px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    margin: 15px auto;
+}
+
+.add-goal-form::placeholder{
+    font-size: 18px;
+    color: #9eb7d3;
+    font-family: "Roboto", "sans-serif";
+}
+
+.goal-form {
+    margin: auto auto auto 10px;
+  }
+
+  .goals-main-container{
+    padding: 20px 0 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: flex-start;  
+  }
+
+  .submit{
+      margin-left: auto;
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: #fff;
+      background-color: #1197df;
+  }
+
+  .no-cards{
+    background-color: #e3e4e9;
+    color: #9eb7d3;
+    border: 2px;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 8px auto 8px 10px;
+    padding: 5px 7px 5px 0px;
+  }
