@@ -32,36 +32,36 @@ export const MainGoalsContainer = ({setCountOfActiveGoals,setCountOfFinishedGoal
    localStorage.setItem('GoalsFinished',JSON.stringify(GoalsFinished))
 
    const addGoalsBacklog = (goal) => {
-       if (GoalsBacklog !== null){
-           setGoalsBacklog([...GoalsBacklog, goal])
-       } else {setGoalsBacklog([goal])}
+       if (GoalsBacklog === null){
+        setGoalsBacklog([goal])
+       } else {setGoalsBacklog([...GoalsBacklog, goal])}
    }
 
    const addReadyGoals = (goal) => {
-       if (GoalsReady !== null) {
-          setGoalsReady([...GoalsReady, GoalsBacklog.find((item) => item.id === goal)])
+       if (GoalsReady === null) {
+          setGoalsReady([GoalsBacklog.find((item) => item.id === goal)])
        } else {
-           setGoalsReady([GoalsBacklog.find((item) => item.id === goal)])
+           setGoalsReady([...GoalsReady, GoalsBacklog.find((item) => item.id === goal)])
        }
 
        setGoalsBacklog(GoalsBacklog.filter((item) => item.id !== goal))
    }
 
    const addProgressGoals = (goal) => {
-       if (GoalsProgress !== null){
-           setGoalsProgress([...GoalsProgress, GoalsReady.find((item) => item.id === goal)])
-       } else {
+       if (GoalsProgress === null){
            setGoalsProgress([GoalsReady.find((item) => item.id === goal)])
+       } else {
+           setGoalsProgress([...GoalsProgress, GoalsReady.find((item) => item.id === goal)])
        }
 
        setGoalsReady(GoalsReady.filter((item) => item.id !== goal))
    }
 
    const addFinishedGoals = (goal) => {
-       if (GoalsFinished !== null){
-           setGoalsFinished([...GoalsFinished, GoalsProgress.find((item) => item.id === goal)])
+       if (GoalsFinished === null){
+        setGoalsFinished(GoalsProgress.find((item) => item.id === goal))
        } else {
-           setGoalsFinished(GoalsProgress.find((item) => item.id === goal))
+        setGoalsFinished([...GoalsFinished, GoalsProgress.find((item) => item.id === goal)])
        }
 
        setGoalsFinished(GoalsProgress.filter((item) => item.id !== goal))
@@ -82,8 +82,7 @@ export const MainGoalsContainer = ({setCountOfActiveGoals,setCountOfFinishedGoal
    const goalsCompile = (routerProps) => {
        let goalId = parseInt(routerProps.match.params.id)
        let getGoal = GoalsBacklog.concat(GoalsReady, GoalsProgress, GoalsFinished).find(
-           (goal) => goal.id === goalId
-       )
+           (goal) => goal.id === goalId)
 
        return getGoal ? (<GoalSeparatePage goal={getGoal} />) : (<p>Задача не найдена</p>)
    }
@@ -96,7 +95,7 @@ export const MainGoalsContainer = ({setCountOfActiveGoals,setCountOfFinishedGoal
                 <div className='mainGoalsContainer'>
                     <Route exact path ='/'>
                         <GoalsMain
-                            properties={{
+                            values={{
                             GoalsBacklog,
                             GoalsReady,
                             GoalsProgress,

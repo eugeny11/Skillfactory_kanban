@@ -13,7 +13,7 @@ export const DropDown = ({
     }
 
     const handleOpsClick = (e) => {
-        SetChosenGoal(e.target.dataset.title)
+        SetChosenGoal(e.target.dataset.name)
         SetChosenId(e.target.dataset.id)
         SetWatchOps(false)
     }
@@ -29,7 +29,7 @@ export const DropDown = ({
                         <li className='add-goal-to-dropdown-ops-item'
                         key={goal.id}
                         data-id={goal.id}
-                        data-title={goal.title}
+                        data-name={goal.name}
                         onClick={handleOpsClick}>
                             {goal.name}
                         </li>

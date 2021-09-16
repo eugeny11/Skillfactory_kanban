@@ -4,7 +4,7 @@ import { DropDown } from '../DropDown/DropDown'
 import './Goals.css'
 
 export const Goals = ({listOfDropDownGoals, addGoals}) => {
-    const [openForm, setOpenForm] = useState(false)
+    const [openForm, SetOpenForm] = useState(false)
     const [chosenGoal, SetChosenGoal] = useState(null)
     const [chosenId, SetChosenId] = useState('')
 
@@ -13,7 +13,7 @@ export const Goals = ({listOfDropDownGoals, addGoals}) => {
 
         if (chosenId !== undefined && chosenId !== ''){
             addGoals(chosenId)
-            setOpenForm(false)
+            SetOpenForm(false)
             SetChosenId('')
             SetChosenGoal(null)
         }
@@ -37,7 +37,7 @@ export const Goals = ({listOfDropDownGoals, addGoals}) => {
                 </form>
             )}
             {listOfDropDownGoals && listOfDropDownGoals.length ? (
-              <Fragment>{!openForm && <AddCardButton setOpenForm={setOpenForm} />}</Fragment>
+              <Fragment>{!openForm && <AddCardButton setOpenForm={SetOpenForm} />}</Fragment>
             ) : (
                 <div className='no-cards'>Пока добавить нечего</div>
             )}

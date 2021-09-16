@@ -1,20 +1,19 @@
 import React, {useState, useContext, Fragment} from 'react'
 import { AddCardButton } from '../AddCardButton/AddCardButton'
 import { MainContext } from '../MainGoalsContainer/MainGoalsContainer'
-import {v4 as uuidv4} from 'uuid'
 import './Goals.css'
 
 export const GoalsToBacklog = () => {
     const {addGoalsBacklog} = useContext(MainContext)
 
     const [openForm, setOpenForm] = useState(false)
-    const [title, setTitle] = useState('')
+    const [name, setName] = useState('')
     const [desc, setDesc] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
 
-    if (!title){
+    if (!name){
         alert('Введите имя!')
     }
 
@@ -22,17 +21,17 @@ export const GoalsToBacklog = () => {
         alert('Введите описание!')
     }
 
-    const id = uuidv4()
+    const id = Math.floor(Math.random() * 10000) + 1
     let date = new Date()
-    addGoalsBacklog({id, date:date.toLocaleString(), title, desc})
+    addGoalsBacklog({id, date:date.toLocaleString(), name, desc})
 
-    setTitle = ''
-    setDesc = ''
-    setOpenForm= 'false'
+    setName('')
+    setDesc('')
+    setOpenForm(false)
     }
 
-    const onTitleChange = (e) => {
-        setTitle(e.target.value)
+    const onNameChange = (e) => {
+        setName(e.target.value)
     }
 
     const onDescChange = (e) => {
@@ -47,8 +46,8 @@ export const GoalsToBacklog = () => {
                 <input className='add-goal-form'
                 type='text'
                 placeholder='Введите название задачи'
-                value={title}
-                onChange={onTitleChange}/>
+                value={name}
+                onChange={onNameChange}/>
                 <input className='add-goal-form'
                 type='text'
                 placeholder='Введите описание задачи'

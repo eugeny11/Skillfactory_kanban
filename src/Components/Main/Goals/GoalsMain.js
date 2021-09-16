@@ -2,28 +2,28 @@ import React from 'react'
 import { GoalsContainer } from '../GoalsContainer/GoalsContainer'
 import './Goals.css'
 
-export const GoalsMain = ({properties}) => {
+export const GoalsMain = ({values}) => {
     return(
         <div className='goals-main-container'>
             <GoalsContainer headline='Backlog'>
-                {properties.GoalsBacklog}
+                {values.GoalsBacklog}
             </GoalsContainer>
             <GoalsContainer headline='Ready'
-            listOfDropDownGoals={properties.GoalsBacklog}
-            addGoals={properties.addReadyGoals}>
-                {properties.GoalsReady}
+            listOfDropDownGoals={values.GoalsBacklog}
+            addGoals={values.addReadyGoals}>
+                {values.GoalsReady}
             </GoalsContainer>
             <GoalsContainer
             headline='In Progress'
-            listOfDropDownGoals={properties.GoalsReady}
-            addGoals={properties.addProgressGoals}>
-                {properties.GoalsProgress}
+            listOfDropDownGoals={values.GoalsReady}
+            addGoals={values.addProgressGoals}>
+                {values.GoalsProgress}
             </GoalsContainer>
             <GoalsContainer
             headline='Finished'
-            listOfDropDownGoals={properties.GoalsProgress}
-            addGoals={properties.addFinishedGoals}>
-                {properties.GoalsFinished}
+            listOfDropDownGoals={values.GoalsProgress}
+            addGoals={values.addFinishedGoals}>
+                {values.GoalsFinished}
             </GoalsContainer>
         </div>
     )

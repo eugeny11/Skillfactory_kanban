@@ -9,12 +9,12 @@ export const GoalsContainer = ({headline, children, listOfDropDownGoals, addGoal
         <div className='goals-container'>
             <h2 className='goals-container-headline'>{headline}</h2>
             <div className='goals-form'>
-                {children && children.length && (
+                {children && children.length > 0 && (
                     <ul className='goals'>
                         {children.map((goal) => {
                             return(
                                 <Link className='goal' to={`goals/${goal.id}`}>
-                                    <li key={goal.id}>{goal.title}</li>
+                                    <li key={goal.id}>{goal.name}</li>
                                 </Link>
                             )
                         })}
