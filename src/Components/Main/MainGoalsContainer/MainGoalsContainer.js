@@ -39,32 +39,32 @@ export const MainGoalsContainer = ({setCountOfActiveGoals,setCountOfFinishedGoal
 
    const addReadyGoals = (goal) => {
        if (GoalsReady === null) {
-          setGoalsReady([GoalsBacklog.find((item) => item.id === goal)])
+          setGoalsReady([GoalsBacklog.find((item) => parseInt(item.id) === parseInt(goal))])
        } else {
-           setGoalsReady([...GoalsReady, GoalsBacklog.find((item) => item.id === goal)])
+           setGoalsReady([...GoalsReady, GoalsBacklog.find((item) => parseInt(item.id) === parseInt(goal))])
        }
 
-       setGoalsBacklog(GoalsBacklog.filter((item) => item.id !== goal))
+       setGoalsBacklog(GoalsBacklog.filter((item) => parseInt(item.id) !== parseInt(goal)))
    }
 
    const addProgressGoals = (goal) => {
        if (GoalsProgress === null){
-           setGoalsProgress([GoalsReady.find((item) => item.id === goal)])
+           setGoalsProgress([GoalsReady.find((item) => parseInt(item.id) === parseInt(goal))])
        } else {
-           setGoalsProgress([...GoalsProgress, GoalsReady.find((item) => item.id === goal)])
+           setGoalsProgress([...GoalsProgress, GoalsReady.find((item) => parseInt(item.id) === parseInt(goal))])
        }
 
-       setGoalsReady(GoalsReady.filter((item) => item.id !== goal))
+       setGoalsReady(GoalsReady.filter((item) => parseInt(item.id) !== parseInt(goal)))
    }
 
    const addFinishedGoals = (goal) => {
        if (GoalsFinished === null){
-        setGoalsFinished(GoalsProgress.find((item) => item.id === goal))
+        setGoalsFinished([GoalsProgress.find((item) => parseInt(item.id) === parseInt(goal))])
        } else {
-        setGoalsFinished([...GoalsFinished, GoalsProgress.find((item) => item.id === goal)])
+        setGoalsFinished([...GoalsFinished, GoalsProgress.find((item) => parseInt(item.id) === parseInt(goal))])
        }
 
-       setGoalsFinished(GoalsProgress.filter((item) => item.id !== goal))
+       setGoalsProgress(GoalsProgress.filter((item) => parseInt(item.id) !== parseInt(goal)))
    }
 
    useEffect(() => {
@@ -81,8 +81,7 @@ export const MainGoalsContainer = ({setCountOfActiveGoals,setCountOfFinishedGoal
 
    const goalsCompile = (routerProps) => {
        let goalId = parseInt(routerProps.match.params.id)
-       let getGoal = GoalsBacklog.concat(GoalsReady, GoalsProgress, GoalsFinished).find(
-           (goal) => goal.id === goalId)
+       let getGoal = GoalsBacklog.concat(GoalsReady, GoalsProgress, GoalsFinished).find((goal) => goal.id === goalId)
 
        return getGoal ? (<GoalSeparatePage goal={getGoal} />) : (<p>Задача не найдена</p>)
    }
@@ -92,7 +91,7 @@ export const MainGoalsContainer = ({setCountOfActiveGoals,setCountOfFinishedGoal
         <MainContext.Provider value = {{addGoalsBacklog}}>
             <Switch>
                 <div className='color-wrap'>
-                <div className='mainGoalsContainer'>
+                <div className='main container'>
                     <Route exact path ='/'>
                         <GoalsMain
                             values={{

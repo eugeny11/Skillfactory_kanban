@@ -26,6 +26,7 @@
 
   .goals-main-container{
     padding: 20px 0 30px;
+    padding-bottom: 500px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;

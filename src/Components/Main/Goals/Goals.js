@@ -36,7 +36,7 @@ export const Goals = ({listOfDropDownGoals, addGoals}) => {
                     class='button submit'/>
                 </form>
             )}
-            {listOfDropDownGoals && listOfDropDownGoals.length ? (
+            {listOfDropDownGoals && listOfDropDownGoals.length > 0 ? (
               <Fragment>{!openForm && <AddCardButton setOpenForm={SetOpenForm} />}</Fragment>
             ) : (
                 <div className='no-cards'>Пока добавить нечего</div>

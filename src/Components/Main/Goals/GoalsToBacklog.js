@@ -21,8 +21,8 @@ export const GoalsToBacklog = () => {
         alert('Введите описание!')
     }
 
-    const id = Math.floor(Math.random() * 10000) + 1
-    let date = new Date()
+    const id = Math.floor(Math.random() * 10000) + 1;
+    const date = new Date();
     addGoalsBacklog({id, date:date.toLocaleString(), name, desc})
 
     setName('')

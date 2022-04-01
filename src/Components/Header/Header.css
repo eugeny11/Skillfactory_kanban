@@ -1,0 +1,18 @@
+.header{
+    background-color: #0485cf;
+}
+
+.content_of_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+
+.header__title{
+    margin: auto auto auto 15px;
+    font-size: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    color: #fff;
+}

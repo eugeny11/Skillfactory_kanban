@@ -26,3 +26,63 @@ body {
   margin: auto auto 8px -5px;
   padding: 5px 7px 5px 3px;
 }
+
+@media all and (max-width: 1200px) {
+  .container{
+    max-width: 340px;
+  }
+
+  .header__title{
+    display: none;
+  }
+
+  .user__menu-arrow-dropdown{
+    margin-top: 10px;
+    position: static;
+  }
+
+  .main{
+    height: auto;
+  }
+
+  .goals-container{
+    min-height: 100px;
+    max-height: 250px;
+  }
+
+  .goals-form{
+    max-height: 200px;
+  }
+
+  .goal-desc{
+    width: 90%;
+  }
+
+  .goal-date{
+    font-size: 10px;
+  }
+
+  .content_of_footer{
+    flex-direction: column;
+    height: auto;
+   align-items: start;
+  }
+
+  .goals_of_footer{
+    flex-direction: column;
+    height: auto;
+  }
+
+  .footer__goal{
+    width: 200px;
+    margin-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 15px;
+  }
+
+  .credits{
+    margin-left: 0;
+    margin-top: 10px;
+    align-self: center;
+  }
+}

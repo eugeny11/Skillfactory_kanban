@@ -3,7 +3,7 @@
     height: 90h;
 }
 
-.mainGoalsContainer{
+.main{
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
