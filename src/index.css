@@ -28,9 +28,15 @@ body {
 }
 
 @media all and (max-width: 1200px) {
+  body{
+    min-height: auto;
+  }
+
   .container{
     max-width: 340px;
   }
+
+ 
 
   .header__title{
     display: none;
@@ -41,9 +47,7 @@ body {
     position: static;
   }
 
-  .main{
-    height: auto;
-  }
+  
 
   .goals-container{
     min-height: 100px;
@@ -65,19 +69,14 @@ body {
   .content_of_footer{
     flex-direction: column;
     height: auto;
-   align-items: start;
+    padding-left: 5px;
   }
 
-  .goals_of_footer{
-    flex-direction: column;
-    height: auto;
-  }
-
-  .footer__goal{
+  .footer__task {
+    padding-left: 15px;
+    align-self: flex-end;
     width: 200px;
     margin-bottom: 10px;
-    padding-left: 0px;
-    padding-right: 15px;
   }
 
   .credits{
@@ -85,4 +84,5 @@ body {
     margin-top: 10px;
     align-self: center;
   }
+
 }

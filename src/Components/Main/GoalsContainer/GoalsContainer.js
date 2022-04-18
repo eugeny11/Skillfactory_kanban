@@ -13,8 +13,8 @@ export const GoalsContainer = ({headline, children, listOfDropDownGoals, addGoal
                     <ul className='goals'>
                         {children.map((goal) => {
                             return(
-                                <Link className='goal' to={`goals/${goal.id}`}>
-                                    <li key={goal.id}>{goal.name}</li>
+                                <Link className='goal' key={goal.id} to={`goals/${goal.id}`}>
+                                    <li>{goal.name}</li>
                                 </Link>
                             )
                         })}

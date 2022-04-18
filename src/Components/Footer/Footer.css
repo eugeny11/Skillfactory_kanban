@@ -18,3 +18,23 @@
     justify-content: space-between;
     width: 25%;
 }
+
+@media all and (max-width: 1200px){
+    .content_of_footer{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .goals_of_footer{
+        justify-content: center;
+    }
+
+    .footer__goal{
+        display: block;
+    }
+
+    .footer__goal:first-child{
+        margin-left: 35px;
+        margin-right: 25px;
+    }
+ }

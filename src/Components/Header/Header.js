@@ -10,8 +10,9 @@ const Header = () => {
                 <Link to='/'>
                     <h1 className='header__title'>Kanban Board</h1>
                 </Link>
+                <UserMenu />
             </div>
-            <UserMenu />
+            
         </header>
     )
 }

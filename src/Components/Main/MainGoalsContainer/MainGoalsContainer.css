@@ -9,4 +9,11 @@
     align-items: flex-start;
     padding: 20px 0 30px;
     flex-wrap: wrap;
+    height: 86vh;
+}
+
+@media all and (max-width: 1200px){
+   .main{
+       height: 120vh;
+   }
 }

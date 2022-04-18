@@ -10,6 +10,7 @@
 }
 
 .goals{
+    overflow-y: auto;
     display: grid;
     grid-template-columns: 250px;
     grid-template-rows: auto;
@@ -21,10 +22,11 @@
 
 .goals-container{
     width: 290px;
-    max-height: 70px;
+    max-height: 70vh;
     background-color: #e0e2e9;
     margin-bottom: 50px;
     border-radius: 15px;
+    margin-right: 20px;
 }
 
 .goals-container-headline{

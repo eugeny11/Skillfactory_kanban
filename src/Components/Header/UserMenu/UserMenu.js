@@ -18,7 +18,7 @@ const UserMenu = () => {
                     click
                     ? "user__menu-arrow user__menu-clicked-arrow" : "user__menu-arrow"
                 } 
-                src={arrow}
+                src={arrow} alt="arrow"
                 />
             </div>
             {click && (
