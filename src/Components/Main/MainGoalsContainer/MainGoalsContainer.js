@@ -31,6 +31,8 @@ export const MainGoalsContainer = ({setCountOfActiveGoals,setCountOfFinishedGoal
    localStorage.setItem('GoalsProgress', JSON.stringify(GoalsProgress))
    localStorage.setItem('GoalsFinished',JSON.stringify(GoalsFinished))
 
+   
+
    const addGoalsBacklog = (goal) => {
        if (GoalsBacklog === null){
         setGoalsBacklog([goal])
@@ -79,12 +81,18 @@ export const MainGoalsContainer = ({setCountOfActiveGoals,setCountOfFinishedGoal
        }
    },[GoalsFinished, setCountOfFinishedGoals])
 
+  
+   const [totalGoals, setTotalGoals] = useState(GoalsBacklog.concat(GoalsReady, GoalsProgress, GoalsFinished))
+
    const goalsCompile = (routerProps) => {
        let goalId = parseInt(routerProps.match.params.id)
        let getGoal = GoalsBacklog.concat(GoalsReady, GoalsProgress, GoalsFinished).find((goal) => goal.id === goalId)
+       
 
-       return getGoal ? (<GoalSeparatePage goal={getGoal} />) : (<p>Задача не найдена</p>)
+       return getGoal ? (<GoalSeparatePage goal={getGoal} totalGoals={totalGoals} setTotalGoals={setTotalGoals}  />) : (<p>Задача не найдена</p>)
    }
+
+   
 
     return(
 
