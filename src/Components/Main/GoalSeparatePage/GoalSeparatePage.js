@@ -7,7 +7,7 @@ export const GoalSeparatePage = (props) => {
 
    const {goal, totalGoals, setTotalGoals} = props
    const {goalId} = useParams()
-   const [value, setValue] = useState(goal.desc)
+   const [value, setValue] = useState('')
 
    const onSubmit = (e) => {
        e.preventDefault()
