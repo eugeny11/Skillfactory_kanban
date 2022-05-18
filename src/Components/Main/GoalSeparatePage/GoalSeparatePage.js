@@ -7,7 +7,7 @@ export const GoalSeparatePage = (props) => {
 
    const {goal, totalGoals, setTotalGoals} = props
    const {goalId} = useParams()
-   const [value, setValue] = useState()
+   const [value, setValue] = useState(goal.desc)
 
    const onSubmit = (e) => {
        e.preventDefault()
@@ -30,11 +30,11 @@ export const GoalSeparatePage = (props) => {
 
     return (
         <div className='goal-separate-page'>
-            <form className='separate-page-container' submit={onSubmit}>
+            <form className='separate-page-container' onSubmit={onSubmit}>
                 <h1 className='goal-title'>{goal.name}</h1>
                 <p className='goal-desc'>{goal.desc}</p>
                 <input className='goal-input-desc'name='description' value={value} type='text' placeholder='Change description'
-                change={handleChange}/>
+                onChange={handleChange}/>
                 <p className='goal-date'>Задача была создана {goal.date}</p>
                 <Link to ='/'>
                     <img className='separate-page-close' src={X} alt='' />
